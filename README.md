@@ -2,11 +2,6 @@
 
 A modern, responsive landing page for D_Exchange💱📊, a trusted platform to buy and sell all crypto assets instantly with fast payment and secure service.
 
-
-## 📸 Screenshot
-
-![D_Exchange Landing Page Screenshot](screenshot.png)
-
 ## ✨ Features
 
 - Live crypto ticker for BTC, ETH, and USDT (powered by CoinGecko API)
@@ -39,9 +34,6 @@ A modern, responsive landing page for D_Exchange💱📊, a trusted platform to 
   - Slate 900: `hsl(218, 44%, 22%)`
 - **Font:** Outfit, 15px, weights 400/700
 
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 ## 📄 License
 
