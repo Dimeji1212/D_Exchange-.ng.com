@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="D_Exchange💱📊" />
+  <meta name="description" content="D_Exchange💱📊 — Buy and sell all crypto assets instantly. Fast payment. Trusted service." />
+  <title>D_Exchange💱📊 | Crypto Exchange</title>
+
+  <!-- Google Fonts: Outfit -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white: hsl(0, 0%, 100%);
+      --slate-300: hsl(212, 45%, 89%);
+      --slate-500: hsl(216, 15%, 48%);
+      --slate-900: hsl(218, 44%, 22%);
+      --accent-gold: #c9a66b;
+      --accent-gold-dark: #a58146;
+      --shadow-dark: rgba(0, 0, 0, 0.35);
+      --font-primary: 'Outfit', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-primary);
+      background-color: var(--slate-900);
+      color: var(--white);
+      font-size: 15px;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: var(--accent-gold-dark);
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+      background: linear-gradient(135deg, #1a2433, var(--slate-900));
+      box-shadow: 0 8px 30px var(--shadow-dark);
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 3.6rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      color: var(--accent-gold);
+      text-shadow: 0 2px 8px rgba(201, 166, 107, 0.6);
+    }
+
+    #crypto-ticker {
+      background: hsl(212, 45%, 89%);
+      color: hsl(218, 44%, 22%);
+      padding: 0.7rem 0;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-weight: 400;
+      color: var(--slate-300);
+    }
+
+    .btn-primary {
+      background-color: var(--accent-gold);
+      color: var(--slate-900);
+      border: none;
+      padding: 0.9rem 2.4rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(201, 166, 107, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      letter-spacing: 0.06em;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-gold-dark);
+      box-shadow: 0 8px 25px rgba(165, 130, 50, 0.7);
+    }
+
+    section {
+      padding: 6rem 2rem;
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      background-color: var(--slate-300);
+      color: var(--slate-900);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      font-weight: 700;
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      color: var(--slate-900);
+      text-align: center;
+    }
+
+    section p, section ul {
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--slate-500);
+    }
+    section ul {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      padding-left: 1.2em;
+    }
+
+    #portfolio .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.4rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+      color: var(--slate-900);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--accent-gold);
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      color: var(--slate-500);
+    }
+
+    #contact form {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      font-family: var(--font-primary);
+      font-size: 1rem;
+      padding: 12px 18px;
+      margin: 0.8rem 0;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 6px var(--accent-gold);
+    }
+
+    button[type="submit"] {
+      margin-top: 1rem;
+      background-color: var(--accent-gold);
+      color: var(--slate-900);
+      padding: 14px 0;
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(201, 166, 107, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .resume-button {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .resume-button a {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--accent-gold);
+      color: var(--slate-900);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 50px;
+      box-shadow: 0 6px 15px rgba(201, 166, 107, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .resume-button a:hover {
+      background-color: var(--accent-gold-dark);
+    }
+
+    footer {
+      background: #12151f;
+      color: #999;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+
+      section {
+        padding: 3rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>D_Exchange💱📊</h1>
+    <div id="crypto-ticker">
+      <span>BTC: <span id="btc-price">...</span> |</span>
+      <span>ETH: <span id="eth-price">...</span> |</span>
+      <span>USDT: <span id="usdt-price">...</span></span>
+    </div>
+    <p>
+      Buy and sell <strong>all crypto assets</strong> instantly.<br>
+      <strong>Fast payment</strong>. Trusted service. Best rates.
+    </p>
+    <button class="btn-primary" onclick="scrollToPortfolio()">See Our Services</button>
+    <div class="resume-button">
+      <a href="marketing-brochure.pdf" download>📄 Download Brochure</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>Why Choose D_Exchange💱📊?</h2>
+    <p>
+      D_Exchange💱📊 is your trusted partner for buying and selling any cryptocurrency. We offer:
+    </p>
+    <ul>
+      <li>Instant transactions and <strong>fast payouts</strong></li>
+      <li>Competitive rates for all crypto assets</li>
+      <li>Secure, transparent, and reliable service</li>
+      <li>24/7 support for all your crypto needs</li>
+    </ul>
+    <p>
+      Whether you’re a beginner or a pro, we make crypto trading easy and worry-free. Join hundreds of satisfied clients today!
+    </p>
+  </section>
+
+  <section id="portfolio">
+    <h2>Success Stories</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Bulk Crypto Purchase</h3>
+        <p>Helped a business acquire large amounts of crypto with instant settlement and best rates.</p>
+        <a href="#">Read Case Study</a>
+      </div>
+      <div class="project-card">
+        <h3>Fast Payouts</h3>
+        <p>Processed high-value crypto sales with same-day payouts for multiple clients.</p>
+        <a href="#">Read Case Study</a>
+      </div>
+      <div class="project-card">
+        <h3>All Assets Supported</h3>
+        <p>Enabled seamless trading for Bitcoin, Ethereum, USDT, and over 100 other coins.</p>
+        <a href="#">Read Case Study</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div style="text-align:center; font-weight:bold; color:#a58146; margin-bottom:1rem;">
+      
+    </div>
+    <div style="text-align:center; margin-bottom:2rem;">
+      <a href="https://wa.me/2349061755749" target="_blank" rel="noopener" style="color:#25d366; font-weight:700; margin-right:1.2rem;">Chat Now on WhatsApp</a>
+      <a href="https://t.me/crownedone0001" target="_blank" rel="noopener" style="color:#229ED9; font-weight:700;">Telegram: @crownedone0001</a>
+    </div>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="What crypto do you want to buy or sell? How can we help you?" required></textarea>
+      <button type="submit">Start Trading</button>
+    </form>
+  </section>
+
+  <!-- WhatsApp Chat Bubble -->
+  <a href="https://wa.me/2349061755749" style="position:fixed;right:24px;bottom:24px;z-index:1000;background:#25d366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.18);cursor:pointer;transition:background 0.2s;" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="32" height="32" fill="#fff">
+      <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.832 4.584 2.236 6.393L4 29l7.828-2.05C13.416 27.632 14.684 28 16 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.18 0-2.334-.207-3.417-.613l-.244-.088-4.648 1.217 1.24-4.53-.158-.234C7.207 18.334 7 17.18 7 16c0-4.963 4.037-9 9-9s9 4.037 9 9-4.037 9-9 9zm5.07-6.29c-.277-.139-1.637-.807-1.89-.899-.253-.093-.437-.139-.62.139-.184.277-.713.899-.874 1.084-.161.184-.322.208-.599.07-.277-.139-1.17-.431-2.23-1.375-.824-.735-1.38-1.64-1.542-1.917-.161-.277-.017-.427.122-.565.126-.125.277-.322.415-.483.139-.161.184-.277.277-.462.092-.185.046-.347-.023-.485-.07-.139-.62-1.497-.849-2.052-.224-.539-.453-.466-.62-.475l-.527-.009c-.17 0-.446.064-.68.298-.233.233-.89.87-.89 2.122s.911 2.463 1.037 2.635c.126.161 1.793 2.74 4.348 3.736.608.209 1.082.334 1.452.427.61.155 1.165.133 1.605.081.49-.058 1.637-.669 1.87-1.316.231-.646.231-1.2.162-1.316-.07-.115-.253-.184-.53-.323z"/>
+    </svg>
+  </a>
+  </section>
+
+  <footer>
+    &copy; 2025 D_Exchange💱📊 | Fast Crypto Exchange
+    <br>
+    Created by Oladimeji Abdulquayum Adeyinka, Matric No: 20/56FJ028
+</footer>
+
+  <script>
+    function scrollToPortfolio() {
+      document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Live Crypto Ticker using CoinGecko API
+    async function updateTicker() {
+      try {
+        const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd');
+        const data = await res.json();
+        document.getElementById('btc-price').textContent = '$' + data.bitcoin.usd.toLocaleString();
+        document.getElementById('eth-price').textContent = '$' + data.ethereum.usd.toLocaleString();
+        document.getElementById('usdt-price').textContent = '$' + data.tether.usd.toLocaleString();
+      } catch (e) {
+        document.getElementById('btc-price').textContent = 'N/A';
+        document.getElementById('eth-price').textContent = 'N/A';
+        document.getElementById('usdt-price').textContent = 'N/A';
+      }
+    }
+    updateTicker();
+    setInterval(updateTicker, 60000); // Update every 60 seconds
+  </script>
+</body>
+</html>
