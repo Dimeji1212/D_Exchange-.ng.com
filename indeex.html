@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D_Exchange💱📊 - Crypto Made Easy</title>
+
+  <!-- AOS for animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    [data-theme="dark"] {
+      background-color: #0d1117;
+      color: #f1f1f1;
+    }
+    .crypto-icon {
+      width: 32px;
+      height: 32px;
+    }
+    .toggle-btn {
+      transition: all 0.3s ease-in-out;
+    }
+    .btn-glow {
+      background: linear-gradient(to right, #f7931a, #ff9900);
+      color: white;
+    }
+    .glass {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255,255,255,0.05);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-[#0d1117] dark:text-white">
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 shadow-lg fixed w-full bg-white dark:bg-[#161b22] z-50">
+    <h1 class="text-2xl font-bold">D_Exchange💱📊</h1>
+    <div class="flex items-center gap-4">
+      <button id="themeToggle" aria-label="Toggle dark mode" class="toggle-btn p-2 rounded-full bg-gray-200 dark:bg-gray-800">
+        🌙
+      </button>
+      <a href="#contact" class="btn-glow px-4 py-2 rounded-xl text-sm">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-24 px-6 text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-4">Buy Crypto. Easily. Securely.</h2>
+    <p class="text-lg mb-6">Track prices, connect instantly, and download your resume with one click.</p>
+    <a href="https://binance.com" target="_blank" class="btn-glow px-6 py-3 rounded-xl text-lg inline-block mr-4">Buy Crypto</a>
+    <a href="#" download="resume.pdf" class="border border-orange-500 text-orange-500 px-6 py-3 rounded-xl text-lg inline-block">Download Resume</a>
+  </section>
+
+  <!-- Crypto Prices -->
+  <section class="py-12 px-6 text-center" id="prices" data-aos="fade-up">
+    <h3 class="text-2xl font-bold mb-6">Live Crypto Prices</h3>
+    <div class="flex justify-center gap-8 text-xl font-semibold">
+      <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" class="crypto-icon inline" alt="BTC" />
+        BTC: <span id="btc-price">...</span>
+      </div>
+      <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" class="crypto-icon inline" alt="ETH" />
+        ETH: <span id="eth-price">...</span>
+      </div>
+      <div>
+        <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" class="crypto-icon inline" alt="USDT" />
+        USDT: <span id="usdt-price">...</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crypto Wallets Section -->
+  <section class="py-12 px-6 text-center" id="crypto-wallets" data-aos="fade-up">
+    <h3 class="text-2xl font-bold mb-6">Pay with Crypto</h3>
+    <div class="flex flex-col md:flex-row justify-center gap-8">
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin" class="mx-auto mb-2 w-12 h-12">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=bc1qlw3vyp9uuurzqqx5jtellsh0439ls977jy8ny6" alt="Bitcoin Wallet QR" class="mx-auto mb-2 rounded-lg" onerror="this.style.display='none'">
+        <div class="text-xs break-all">bc1qlw3vyp9uuurzqqx5jtellsh0439ls977jy8ny6</div>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg" alt="Ethereum" class="mx-auto mb-2 w-12 h-12">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=0xCA324358FeE5BEd2D7BD69eb243E15a9789F73A8" alt="Ethereum Wallet QR" class="mx-auto mb-2 rounded-lg" onerror="this.style.display='none'">
+        <div class="text-xs break-all">0xCA324358FeE5BEd2D7BD69eb243E15a9789F73A8</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="py-12 px-6 max-w-xl mx-auto" data-aos="fade-up">
+    <h3 class="text-2xl font-bold mb-4 text-center">Let's Connect</h3>
+    <form action="https://formspree.io/f/your-placeholder-id" method="POST" class="space-y-4">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-800">
+      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-800">
+      <textarea name="message" placeholder="Your Message" rows="5" required class="w-full p-3 rounded-lg bg-gray-100 dark:bg-gray-800"></textarea>
+      <button type="submit" class="btn-glow w-full p-3 rounded-xl">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-8 bg-gray-100 dark:bg-[#161b22]">
+    <p>&copy; 2025 D_Exchange💱📊. All rights reserved.</p>
+    <div class="mt-4 space-x-4">
+      <a href="https://wa.me/2349061755749" target="_blank">WhatsApp</a>
+      <a href="https://t.me/crownedone0001" target="_blank">Telegram</a>
+    </div>
+  </footer>
+
+  <!-- Floating Chat Bubble -->
+  <a href="https://wa.me/2349061755749" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-xl z-50">
+    💬
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <script>
+    // Theme Toggle
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    toggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      toggle.textContent = isDark ? '🌙' : '☀️';
+    });
+
+    // Crypto Price Fetching from CoinGecko
+    async function fetchPrices() {
+      try {
+        const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd');
+        const data = await res.json();
+        document.getElementById('btc-price').textContent = `$${data.bitcoin.usd}`;
+        document.getElementById('eth-price').textContent = `$${data.ethereum.usd}`;
+        document.getElementById('usdt-price').textContent = `$${data.tether.usd}`;
+      } catch (err) {
+        console.error('Error fetching prices', err);
+      }
+    }
+
+    fetchPrices();
+    setInterval(fetchPrices, 60000); // refresh every 60 sec
+  </script>
+</body>
+</html>
